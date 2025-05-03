@@ -5,7 +5,6 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Montserrat, sans-serif;
-  overflow-x: hidden;
 }
 
 html {
@@ -134,39 +133,89 @@ img.socialIcon {
   }
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(-10px);
-  }
-
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-.scroll-down {
-  animation: bounce 2s infinite;
+.scroll-down-arrow {
+  color: #4e567e;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: #d2f1e4;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  animation: bounce 1.5s ease-in-out infinite;
+  display: flex;
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.scroll-down:hover {
-  cursor: pointer;
-  animation: bounce .5s infinite;
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%)translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%)translateY(-10px);
+  }
 }
 
-.scroll-down:active {
-  animation: bounce .2s infinite;
+.education-container, .work-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  display: flex;
 }
 
-.scroll-down:focus, .scroll-down:focus-visible {
-  outline: none;
+.education-item, .work-item {
+  width: 260px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  transition: transform .3s, box-shadow .3s;
+  box-shadow: 0 4px 12px #0000000d;
+}
+
+.education-item:hover, .work-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px #0000001a;
+}
+
+.education-item img, .work-item img {
+  width: 50px;
+  height: 50px;
+  filter: grayscale();
+  margin-bottom: 1rem;
+  transition: filter .3s;
+}
+
+.education-item:hover img, .work-item:hover img {
+  filter: none;
+}
+
+#education h2 {
+  text-align: center;
+  color: #4e567e;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.education-item h3, .work-item h3 {
+  color: #333;
+  margin: .5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.education-item p, .work-item p {
+  color: #666;
+  margin: .3rem 0;
+  font-size: .95rem;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */
