@@ -9,11 +9,14 @@ body {
   font-family: "Montserrat", sans-serif;
   height: 100%;
   margin: 0;
-  overflow-x: hidden;
+  /* verflow-x: hidden; */
   padding: 0;
   width: 100%;
 }
-
+   /* add a smooth scroll */ 
+html {
+  scroll-behavior: smooth;
+}
 div#main {
   display: flex;
   flex-direction: column;
@@ -122,4 +125,112 @@ a:hover {
 img.socialIcon {
   height: 30px;
   width: 30px;
+}
+/* add a slide In Left animation */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.scroll-down-arrow {
+  font-size: 2rem;
+  color: #4E567E;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 1.5s infinite ease-in-out;
+  cursor: pointer;
+  background: #D2F1E4; /* Secondary color */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Create a bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Style for education and work section containers */
+.education-container,
+.work-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 0;
+  justify-content: center;
+}
+
+/* Style individual cards for education and work entries */
+.education-item,
+.work-item {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover,
+.work-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Icons inside cards */
+.education-item img,
+.work-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.education-item:hover img,
+.work-item:hover img {
+  filter: none;
+}
+
+/* Section headers spacing */
+#education h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #4E567E;
+}
+
+/* Headings inside cards */
+.education-item h3,
+.work-item h3 {
+  margin: 0.5rem 0;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Paragraphs inside cards */
+.education-item p,
+.work-item p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #666;
 }
